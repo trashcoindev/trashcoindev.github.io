@@ -1,0 +1,21 @@
+{
+  "name": "trash-coin",
+  "version": "1.0.0",
+  "description": "一个讽刺性、艺术驱动的静态网站，旨在提高人们对人类创造的'垃圾'的意识",
+  "main": "index.html",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [
+    "art",
+    "satire",
+    "cryptocurrency",
+    "environment",
+    "static-website"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+} 

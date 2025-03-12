@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Coin – The Garbage You Deserve</title>
+    <!-- 添加Google Fonts链接 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Special+Elite&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    
+    <!-- 添加漫画风格毕加索垃圾桶favicon -->
+    <link rel="icon" href="assets/images/trash-favicon.png" type="image/png">
+    
+    <style>
+        /* 基本样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Special Elite', cursive;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            background-image: url('assets/images/grunge-texture.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+        }
+
+        /* 容器样式 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 标题样式 */
+        .landing-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-align: center;
+            transform: rotate(-2deg);
+            color: #e9a64c;
+            text-shadow: 3px 3px 0 #8b4513;
+            font-family: 'Nosifer', cursive;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        /* 血滴效果 */
+        .blood-drip {
+            color: #bb0a1e;
+            position: relative;
+        }
+
+        .blood-drip::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            width: 2px;
+            height: 20px;
+            background: #bb0a1e;
+            transform: translateX(-50%);
+            animation: drip 2s infinite;
+        }
+
+        @keyframes drip {
+            0% { height: 0; opacity: 1; }
+            70% { height: 20px; opacity: 1; }
+            100% { height: 20px; opacity: 0; }
+        }
+
+        .landing-subtitle {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: 'Sedgwick Ave Display', cursive;
+            transform: rotate(1deg);
+            color: #a7d129;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            background-color: rgba(40, 40, 40, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 3rem;
+            border: 3px solid #5a3a22;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* 废墟效果 - 裂缝 */
+        .main-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 30%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(187, 10, 30, 0.3), transparent);
+            transform: rotate(5deg);
+        }
+
+        .main-content::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 20%;
+            width: 3px;
+            height: 70%;
+            background: linear-gradient(to bottom, transparent, rgba(187, 10, 30, 0.2), transparent);
+            transform: rotate(-7deg);
+        }
+
+        .main-headline {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #ff6b35;
+            transform: rotate(-1deg);
+            font-family: 'Creepster', cursive;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .main-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-family: 'Special Elite', cursive;
+            letter-spacing: 0.5px;
+        }
+
+        .main-text p {
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 0.5rem;
+            background-color: rgba(30, 30, 30, 0.7);
+            transform: rotate(0.5deg);
+            border-left: 2px solid rgba(187, 10, 30, 0.3);
+            position: relative;
+        }
+
+        /* 破损效果 */
+        .distressed {
+            position: relative;
+            display: inline-block;
+        }
+
+        .distressed::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+                radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+            background-size: 4px 4px, 2px 2px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .main-text p:nth-child(odd) {
+            transform: rotate(-0.5deg);
+            font-family: 'Sedgwick Ave Display', cursive;
+            border-left: none;
+            border-right: 2px solid rgba(187, 10, 30, 0.3);
+        }
+
+        /* 血色文字强调 */
+        .blood-text {
+            color: #bb0a1e;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        /* 按钮和链接样式 */
+        .cta-button {
+            display: block;
+            width: 300px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            background-color: #bb0a1e;
+            color: #f0f0f0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transform: rotate(-3deg);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Creepster', cursive;
+            letter-spacing: 1px;
+            clip-path: polygon(
+                0% 5%, 
+                5% 0%, 
+                95% 0%, 
+                100% 5%, 
+                100% 95%, 
+                95% 100%, 
+                5% 100%, 
+                0% 95%
+            );
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+            background-image: url('assets/images/paper-texture.webp');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cta-button:hover {
+            transform: rotate(3deg) scale(1.05);
+            box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.4);
+            background-color: #9a0919;
+        }
+
+        /* 血滴按钮效果 */
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 4px;
+            height: 0;
+            background: #bb0a1e;
+            transform: translateX(-50%);
+            transition: height 0.3s ease;
+            opacity: 0;
+        }
+
+        .cta-button:hover::after {
+            height: 15px;
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 2rem;
+        }
+
+        .social-link {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background-color: #333;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Special Elite', cursive;
+            letter-spacing: 1px;
+            border: 1px solid rgba(187, 10, 30, 0.3);
+            text-transform: uppercase;
+        }
+
+        .social-link:hover {
+            color: #bb0a1e;
+            transform: scale(1.1);
+        }
+
+        .social-link:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .social-link:hover:before {
+            left: 100%;
+        }
+
+        /* 路线图部分 */
+        .roadmap {
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        /* 废墟效果 - 污渍 */
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(187, 10, 30, 0.2), transparent);
+        }
+
+        .roadmap-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #7cb518;
+            font-family: 'Nosifer', cursive;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* 废墟效果 - 标题下划线 */
+        .roadmap-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+            width: 50%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #7cb518, transparent);
+        }
+
+        .roadmap-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .roadmap-step {
+            flex: 1;
+            min-width: 250px;
+            background-color: rgba(40, 40, 40, 0.8);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #5a3a22;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 废墟效果 - 步骤卡片 */
+        .roadmap-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, transparent 98%, rgba(187, 10, 30, 0.3) 99%, transparent 100%),
+                linear-gradient(135deg, transparent 97%, rgba(187, 10, 30, 0.3) 98%, transparent 100%);
+            background-size: 20px 20px;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .roadmap-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .roadmap-step h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #e9a64c;
+            font-family: 'Creepster', cursive;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* 废墟效果 - 步骤标题下划线 */
+        .roadmap-step h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(233, 166, 76, 0.5), transparent);
+        }
+
+        .roadmap-step p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-family: 'Special Elite', cursive;
+            letter-spacing: 0.5px;
+            line-height: 1.4;
+        }
+
+        /* 第三步特殊样式 */
+        .roadmap-step:nth-child(3) h3 {
+            color: #bb0a1e;
+        }
+
+        .roadmap-step:nth-child(3) h3::after {
+            background: linear-gradient(to right, transparent, rgba(187, 10, 30, 0.5), transparent);
+        }
+
+        .roadmap-image {
+            width: 100%;
+            height: 200px;
+            margin-top: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 废墟效果 - 图像边框 */
+        .roadmap-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .roadmap-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+            filter: saturate(0.9) contrast(1.1);
+        }
+
+        .roadmap-step:hover .roadmap-image img {
+            transform: scale(1.05);
+            filter: saturate(1) contrast(1.2);
+        }
+
+        /* 动画区域 - 垃圾掉落 */
+        .trash-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .trash-item {
+            position: absolute;
+            top: -100px;
+            width: 80px;
+            height: 80px;
+            z-index: 0;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease-out;
+        }
+
+        /* 底部垃圾堆积区域 */
+        .trash-pile {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            z-index: 0;
+            opacity: 0.8;
+            background-image: url('assets/images/roadmap-pile.webp');
+            background-size: cover;
+            background-position: center top;
+            box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 媒体查询 - 响应式设计 */
+        @media (max-width: 768px) {
+            .landing-title {
+                font-size: 3rem;
+            }
+            
+            .landing-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .main-headline {
+                font-size: 2rem;
+            }
+            
+            .roadmap-steps {
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                width: 250px;
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .landing-title {
+                font-size: 2.5rem;
+            }
+            
+            .landing-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .main-headline {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                width: 200px;
+                font-size: 1.1rem;
+            }
+            
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 垃圾掉落动画容器 -->
+    <div class="trash-container" id="trashContainer"></div>
+    
+    <!-- 底部垃圾堆积 -->
+    <div class="trash-pile"></div>
+
+    <div class="container">
+        <!-- 登陆页面 -->
+        <h1 class="landing-title">Welcome to <span class="blood-drip">Trash</span> Coin</h1>
+        <h2 class="landing-subtitle">The Garbage You Deserve</h2>
+        <p class="landing-subtitle">A world drowning in junk deserves a currency to match.</p>
+
+        <!-- 主要内容区域 -->
+        <section class="main-content">
+            <h2 class="main-headline">The World is a Dumpster, and We're the Kings</h2>
+            <div class="main-text">
+                <p>Look around. <span class="distressed">Plastic oceans</span>. Crypto scams. <span class="blood-text">Overconsumption</span>.</p>
+                <p>Humanity's legacy is a <span class="distressed">landfill of dreams</span>.</p>
+                <p>Trash Coin isn't just a joke—it's a <span class="blood-text">wake-up call</span>.</p>
+                <p>Buy it. <span class="blood-text">Burn it</span>. Love it.</p>
+                <p>Because if we're <span class="distressed">drowning in garbage</span>, we might as well <span class="blood-text">profit</span> from it.</p>
+            </div>
+
+            <!-- 行动号召 -->
+            <a href="https://app.uniswap.org/" class="cta-button" id="buyButton" target="_blank">Buy Trash Coin Now</a>
+            
+            <!-- 社交链接 -->
+            <div class="social-links">
+                <a href="https://twitter.com/trashcoin" class="social-link" target="_blank">Twitter</a>
+                <a href="https://t.me/trashcoin" class="social-link" target="_blank">Telegram</a>
+            </div>
+        </section>
+
+        <!-- 路线图部分 -->
+        <section class="roadmap">
+            <h2 class="roadmap-title">From Trash to <span class="blood-drip">Treasure</span></h2>
+            <div class="roadmap-steps">
+                <div class="roadmap-step">
+                    <h3>Step 1: The Pile</h3>
+                    <p>Trash falls forever, a <span class="distressed">monument to our mess</span>.</p>
+                    <div class="roadmap-image">
+                        <img src="assets/images/roadmap-pile.webp" alt="A heap of trash">
+                    </div>
+                </div>
+                <div class="roadmap-step">
+                    <h3>Step 2: The Melt</h3>
+                    <p>The garbage warps, a <span class="distressed">Picasso nightmare</span>.</p>
+                    <div class="roadmap-image">
+                        <img src="assets/images/roadmap-melt.webp" alt="Melting trash">
+                    </div>
+                </div>
+                <div class="roadmap-step">
+                    <h3>Step 3: The Gold</h3>
+                    <p>Trash becomes gold—<span class="blood-text">satire at its finest</span>.</p>
+                    <div class="roadmap-image">
+                        <img src="assets/images/roadmap-gold.webp" alt="Gold coins">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 垃圾图像数组
+        const trashImages = [
+            'assets/images/trash1.webp',
+            'assets/images/trash2.webp',
+            'assets/images/trash3.webp',
+            'assets/images/trash4.webp',
+            'assets/images/trash5.webp',
+            'assets/images/trash6.webp',
+            'assets/images/trash7.webp',
+            'assets/images/trash8.webp',
+            'assets/images/trash9.webp',
+            'assets/images/trash10.webp',
+            'assets/images/trash11.webp',
+            'assets/images/trash12.webp',
+            'assets/images/trash13.webp',
+            'assets/images/trash14.webp',
+            'assets/images/trash15.webp'
+        ];
+
+        // 跟踪垃圾项目数量，防止过多导致性能问题
+        let trashItemCount = 0;
+        const maxTrashItems = 100; // 最大垃圾项目数量
+
+        // 垃圾掉落动画
+        function createTrashItem() {
+            // 如果垃圾项目数量超过最大值，不再创建新的
+            if (trashItemCount >= maxTrashItems) {
+                // 移除最早的垃圾项目
+                const trashContainer = document.getElementById('trashContainer');
+                if (trashContainer.children.length > 0) {
+                    trashContainer.removeChild(trashContainer.children[0]);
+                    trashItemCount--;
+                }
+            }
+
+            const trashContainer = document.getElementById('trashContainer');
+            const trashItem = document.createElement('div');
+            trashItem.classList.add('trash-item');
+            
+            // 随机选择垃圾图像
+            const randomTrashImage = trashImages[Math.floor(Math.random() * trashImages.length)];
+            trashItem.style.backgroundImage = `url(${randomTrashImage})`;
+            
+            // 随机位置和大小
+            const randomLeft = Math.random() * 100;
+            const randomSize = 30 + Math.random() * 50;
+            const randomRotation = Math.random() * 360;
+            const randomDuration = 5 + Math.random() * 10;
+            
+            trashItem.style.left = `${randomLeft}%`;
+            trashItem.style.width = `${randomSize}px`;
+            trashItem.style.height = `${randomSize}px`;
+            trashItem.style.transform = `rotate(${randomRotation}deg)`;
+            
+            trashContainer.appendChild(trashItem);
+            trashItemCount++;
+            
+            // 动画：从顶部掉落到底部
+            let position = -100;
+            const maxPosition = window.innerHeight - 100; // 减去垃圾堆的高度
+            const interval = 16; // 约60fps
+            const step = (maxPosition + 100) / (randomDuration * 1000 / interval);
+            
+            const fallInterval = setInterval(() => {
+                position += step;
+                trashItem.style.top = `${position}px`;
+                
+                // 当垃圾到达底部时停止动画
+                if (position >= maxPosition) {
+                    clearInterval(fallInterval);
+                    
+                    // 垃圾到达底部后，添加一个小的随机位移，模拟堆积效果
+                    const finalLeft = parseFloat(trashItem.style.left) + (Math.random() * 10 - 5);
+                    const finalTop = maxPosition + (Math.random() * 20 - 10);
+                    
+                    trashItem.style.left = `${finalLeft}%`;
+                    trashItem.style.top = `${finalTop}px`;
+                    trashItem.style.zIndex = Math.floor(finalTop); // 调整z-index使堆叠看起来更自然
+                    
+                    // 添加一个小的缩放和旋转，使垃圾看起来更自然地堆积
+                    const finalScale = 0.8 + Math.random() * 0.4;
+                    const finalRotation = parseFloat(trashItem.style.transform.replace(/[^\d.]/g, '')) + (Math.random() * 30 - 15);
+                    trashItem.style.transform = `rotate(${finalRotation}deg) scale(${finalScale})`;
+                    
+                    // 不再移除垃圾项目，让它们堆积在底部
+                }
+            }, interval);
+        }
+
+        // 定期创建新的垃圾
+        function startTrashFall() {
+            // 初始创建一些垃圾
+            for (let i = 0; i < 10; i++) {
+                setTimeout(createTrashItem, i * 300);
+            }
+            
+            // 定期创建新垃圾，但频率降低以防止过多垃圾
+            setInterval(createTrashItem, 2000);
+        }
+
+        // 页面加载后启动动画
+        window.addEventListener('load', startTrashFall);
+
+        // 按钮悬停效果
+        const buyButton = document.getElementById('buyButton');
+        buyButton.addEventListener('mouseover', () => {
+            buyButton.style.transform = 'rotate(3deg) scale(1.05)';
+        });
+        
+        buyButton.addEventListener('mouseout', () => {
+            buyButton.style.transform = 'rotate(-3deg)';
+        });
+
+        // 按钮点击效果 - 移除阻止默认行为的代码，允许链接正常跳转
+        buyButton.addEventListener('click', (e) => {
+            // 不再阻止默认行为，允许链接正常跳转
+            // 可以添加跟踪代码或其他效果，但不阻止跳转
+            console.log('用户点击了购买按钮，正在跳转到Uniswap...');
+        });
+    </script>
+</body>
+</html> 
