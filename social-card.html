@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash Coin Social Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&family=Special+Elite&family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 1200px;
+            height: 630px;
+            background-color: #1a1a1a;
+            background-image: url('assets/images/grunge-texture.webp');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            width: 90%;
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .title {
+            font-family: 'Nosifer', cursive;
+            font-size: 80px;
+            color: #e9a64c;
+            text-shadow: 5px 5px 0 #8b4513;
+            margin-bottom: 20px;
+            transform: rotate(-2deg);
+        }
+        
+        .subtitle {
+            font-family: 'Creepster', cursive;
+            font-size: 40px;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+        }
+        
+        .tagline {
+            font-family: 'Special Elite', cursive;
+            font-size: 30px;
+            color: #a7d129;
+            margin-bottom: 40px;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .blood-text {
+            color: #bb0a1e;
+            position: relative;
+        }
+        
+        .blood-text::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            width: 3px;
+            height: 15px;
+            background: #bb0a1e;
+            transform: translateX(-50%);
+        }
+        
+        .trash-icon {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+        
+        .trash1 {
+            top: 50px;
+            left: 100px;
+            transform: rotate(-15deg);
+            background-image: url('assets/images/trash1.webp');
+        }
+        
+        .trash2 {
+            bottom: 80px;
+            right: 120px;
+            transform: rotate(20deg);
+            background-image: url('assets/images/trash5.webp');
+        }
+        
+        .trash3 {
+            bottom: 150px;
+            left: 150px;
+            transform: rotate(5deg);
+            background-image: url('assets/images/trash10.webp');
+        }
+        
+        .trash4 {
+            top: 120px;
+            right: 150px;
+            transform: rotate(-10deg);
+            background-image: url('assets/images/trash15.webp');
+        }
+        
+        .gold-coin {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background-image: url('assets/images/roadmap-gold.webp');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="trash-icon trash1"></div>
+    <div class="trash-icon trash2"></div>
+    <div class="trash-icon trash3"></div>
+    <div class="trash-icon trash4"></div>
+    
+    <div class="container">
+        <h1 class="title"><span class="blood-text">Trash</span> Coin</h1>
+        <h2 class="subtitle">The Garbage You Deserve</h2>
+        <p class="tagline">"The world is a dumpster, and we're the kings."</p>
+    </div>
+    
+    <div class="gold-coin"></div>
+</body>
+</html> 
